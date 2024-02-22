@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+package fileprocessor;
+
+// The file processing service definition.
+service FileProcessor {
+  // Sends a PDF file and receives a summary.
+  rpc ProcessPdf (PdfFile) returns (SummaryResponse) {}
+
+  // Searches for documents based on a query.
+  rpc SearchDocuments (SearchRequest) returns (SearchResponse) {}
+
+  // Receives text and returns its summary.
+  rpc SummarizeText (SummarizeTextRequest) returns (SummaryResponse) {}
+}
+
+// The request message containing the PDF file.
+message PdfFile {
+  bytes content = 1;
+}
+
+// The response message containing the summary.
+message SummaryResponse {
+  string summary = 1;
+}
+
+// The request message for a search.
+message SearchRequest {
+  string query = 1;
+}
+
+// The response message for a search.
+message SearchResponse {
+  repeated string documents = 1;
+}
+
+// The request message for text summarization.
+message SummarizeTextRequest {
+  string text = 1;
+}

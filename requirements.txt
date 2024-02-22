@@ -1,0 +1,8 @@
+grpcio==1.38.1
+grpcio-tools==1.38.1
+pdfminer.six==20201018
+nltk==3.6.2
+gensim==4.0.1
+transformers==4.5.1
+faiss-cpu==1.7.0
+numpy==1.20.3
